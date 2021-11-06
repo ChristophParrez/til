@@ -1,4 +1,4 @@
-package com.switchfully.til;
+package com.switchfully.til.domain;
 
 import java.util.Objects;
 import java.util.UUID;
