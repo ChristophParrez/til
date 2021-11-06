@@ -28,10 +28,7 @@ public class TilService {
     }
 
     public Til addTil(TilUICreateDto tilToAdd) {
-        Til newTil = tilMapper.toEntity(tilToAdd);
-        logger.info(newTil.getOwner());
-        logger.info(newTil.getKnowledgeOfTheDay());
-        return tilRepository.addTil(newTil);
+        return tilRepository.addTil(tilMapper.toEntity(tilToAdd));
     }
 
     public void removeTil(String id) {
