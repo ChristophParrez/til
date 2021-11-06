@@ -1,6 +1,7 @@
 package com.switchfully.til.service;
 
 import com.switchfully.til.api.TilCreateDto;
+import com.switchfully.til.api.TilDto;
 import com.switchfully.til.domain.Til;
 import com.switchfully.til.mapper.TilMapper;
 import com.switchfully.til.repository.TilRepository;
@@ -22,8 +23,8 @@ public class TilService {
         this.tilMapper = tilMapper;
     }
 
-    public List<Til> getTils() {
-        return tilRepository.getTils();
+    public List<TilDto> getTils() {
+        return tilMapper.toDto(tilRepository.getTils());
     }
 
     public Til addTil(TilCreateDto tilToAdd) {
