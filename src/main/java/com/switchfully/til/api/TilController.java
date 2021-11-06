@@ -31,16 +31,16 @@ public class TilController {
     }
 
     @PostMapping(consumes = {"application/json"})
-    public Til addTilWithPostman(@RequestBody Til newKnowledge) {
+    public Til addTilWithPostman(@RequestBody TilCreateDto newKnowledge) {
         return tilService.addTil(newKnowledge);
     }
 
     @PostMapping(consumes = {"application/x-www-form-urlencoded"})
     // @RequestBody does not like application/x-www-form-urlencoded information
     // Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content type 'application/x-www-form-urlencoded;charset=UTF-8' not supported]
-    public String addTilWithUI(Til newKnowledge) {
+    public String addTilWithUI(TilCreateDto newKnowledge) {
         tilService.addTil(newKnowledge);
-        return "Thank you " + newKnowledge.getOwner() + ", your #TIL has been added";
+        return "Thank you " + newKnowledge.getOwnerName() + ", your #TIL has been added";
     }
 
     @DeleteMapping("/{id}")
