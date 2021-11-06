@@ -6,12 +6,13 @@ import com.switchfully.til.domain.Til;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.UUID;
 import java.util.stream.Collectors;
 
 @Service
 public class TilMapper {
     public Til toEntity(TilUICreateDto dto) {
-        return new Til(dto.getOwnerName(), dto.getTil(), dto.getUuid());
+        return new Til(dto.getOwnerName(), dto.getTil(), UUID.randomUUID());
     }
 
     public TilUIDto toDto(Til entity) {
