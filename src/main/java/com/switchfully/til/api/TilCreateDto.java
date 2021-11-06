@@ -10,10 +10,10 @@ public class TilCreateDto {    // UI needs ownerName
     private final String til;
     private final UUID uuid;
 
-    public TilCreateDto(String ownerName, String til, UUID uuid) {
+    public TilCreateDto(String ownerName, String til) {
         this.ownerName = ownerName;
         this.til = til;
-        this.uuid = uuid;
+        this.uuid = UUID.randomUUID();
     }
 
     public String getOwnerName() {
