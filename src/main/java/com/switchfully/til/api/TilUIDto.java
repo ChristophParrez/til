@@ -2,12 +2,12 @@ package com.switchfully.til.api;
 
 import java.util.UUID;
 
-public class TilDto {
+public class TilUIDto {
     private final String temployee;
     private final String til;
     private final UUID tid;
 
-    public TilDto(String temployee, String til, UUID tid) {
+    public TilUIDto(String temployee, String til, UUID tid) {
         this.temployee = temployee;
         this.til = til;
         this.tid = tid;

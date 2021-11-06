@@ -26,19 +26,19 @@ public class TilController {
 
 
     @GetMapping
-    public List<TilDto> getAllTils() {
+    public List<TilUIDto> getAllTils() {
         return tilService.getTils();
     }
 
     @PostMapping(consumes = {"application/json"})
-    public Til addTilWithPostman(@RequestBody TilCreateDto newKnowledge) {
+    public Til addTilWithPostman(@RequestBody TilUICreateDto newKnowledge) {
         return tilService.addTil(newKnowledge);
     }
 
     @PostMapping(consumes = {"application/x-www-form-urlencoded"})
     // @RequestBody does not like application/x-www-form-urlencoded information
     // Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content type 'application/x-www-form-urlencoded;charset=UTF-8' not supported]
-    public String addTilWithUI(TilCreateDto newKnowledge) {
+    public String addTilWithUI(TilUICreateDto newKnowledge) {
         tilService.addTil(newKnowledge);
         return "Thank you " + newKnowledge.getOwnerName() + ", your #TIL has been added";
     }

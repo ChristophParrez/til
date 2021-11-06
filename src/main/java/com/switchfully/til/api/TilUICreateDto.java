@@ -5,12 +5,12 @@ import com.switchfully.til.domain.Til;
 import java.util.Objects;
 import java.util.UUID;
 
-public class TilCreateDto {    // UI needs ownerName
+public class TilUICreateDto {    // UI needs ownerName
     private final String ownerName;
     private final String til;
     private final UUID uuid;
 
-    public TilCreateDto(String ownerName, String til) {
+    public TilUICreateDto(String ownerName, String til) {
         this.ownerName = ownerName;
         this.til = til;
         this.uuid = UUID.randomUUID();
