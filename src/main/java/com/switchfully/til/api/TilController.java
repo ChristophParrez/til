@@ -25,7 +25,7 @@ public class TilController {
     }
 
     @GetMapping
-    public List<TilUIDto> getAllTils() {
+    public List<TilDto> getAllTils() {
         return tilService.getTils();
     }
 

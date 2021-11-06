@@ -1,7 +1,7 @@
 package com.switchfully.til.mapper;
 
 import com.switchfully.til.api.TilUICreateDto;
-import com.switchfully.til.api.TilUIDto;
+import com.switchfully.til.api.TilDto;
 import com.switchfully.til.domain.Til;
 import org.springframework.stereotype.Service;
 
@@ -15,11 +15,11 @@ public class TilMapper {
         return new Til(dto.getOwnerName(), dto.getTil(), UUID.randomUUID());
     }
 
-    public TilUIDto toDto(Til entity) {
-        return new TilUIDto(entity.getOwner(), entity.getKnowledgeOfTheDay(), entity.getUuid());
+    public TilDto toDto(Til entity) {
+        return new TilDto(entity.getOwner(), entity.getKnowledgeOfTheDay(), entity.getUuid());
     }
 
-    public List<TilUIDto> toDto(List<Til> tils) {
+    public List<TilDto> toDto(List<Til> tils) {
         return tils.stream().map(this::toDto).collect(Collectors.toList());
     }
 }
