@@ -1,12 +1,10 @@
 package com.switchfully.til.api;
 
-import java.util.UUID;
-
-public class TilUICreateDto {    // UI needs ownerName
+public class TilCreateDtoWithUI {
     private final String ownerName;
     private final String til;
 
-    public TilUICreateDto(String ownerName, String til) {
+    public TilCreateDtoWithUI(String ownerName, String til) {
         this.ownerName = ownerName;
         this.til = til;
     }

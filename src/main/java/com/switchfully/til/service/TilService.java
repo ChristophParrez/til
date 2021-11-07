@@ -1,6 +1,7 @@
 package com.switchfully.til.service;
 
-import com.switchfully.til.api.TilUICreateDto;
+import com.switchfully.til.api.TilCreateDtoWithPostman;
+import com.switchfully.til.api.TilCreateDtoWithUI;
 import com.switchfully.til.api.TilDto;
 import com.switchfully.til.domain.Til;
 import com.switchfully.til.mapper.TilMapper;
@@ -16,7 +17,6 @@ import java.util.UUID;
 public class TilService {
     private final TilRepository tilRepository;
     private final TilMapper tilMapper;
-    private Logger logger = LoggerFactory.getLogger(this.getClass());
 
     public TilService(TilRepository tilRepository, TilMapper tilMapper) {
         this.tilRepository = tilRepository;
@@ -27,7 +27,11 @@ public class TilService {
         return tilMapper.toDto(tilRepository.getTils());
     }
 
-    public Til addTil(TilUICreateDto tilToAdd) {
+    public void addTil(TilCreateDtoWithUI tilToAdd) {
+        tilRepository.addTil(tilMapper.toEntity(tilToAdd));
+    }
+
+    public Til addTil(TilCreateDtoWithPostman tilToAdd) {
         return tilRepository.addTil(tilMapper.toEntity(tilToAdd));
     }
 
